@@ -346,7 +346,7 @@ initializers.fetchConfig = function(callback) {
 	(new Echo.API.Request({
 		"apiBaseURL": this.config.get("storageURL"),
 		"secure": this.config.get("useSecureAPI"),
-		"endpoint": this.config.get("id"),
+		"endpoint": this.config.get("id").split("#")[0],
 		"data": { "_": Math.random() },
 		"onData": function(config) {
 			if (!config || !config.apps || !config.apps.length) {
